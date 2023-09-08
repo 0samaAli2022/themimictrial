@@ -42,7 +42,6 @@ dependencies:
   cloud_firestore: ^4.8.1
   uuid: ^3.0.7
   font_awesome_flutter: ^10.4.0
-  flutter_facebook_auth: ^6.0.1
   google_sign_in: ^6.1.4
   image_picker: ^1.0.2
   image: ^4.0.17

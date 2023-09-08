@@ -7,7 +7,6 @@ import 'package:themimictrial/views/components/constants/strings.dart' as str;
 import 'package:themimictrial/views/constants/app_colors.dart';
 import 'package:themimictrial/views/constants/strings.dart';
 import 'package:themimictrial/views/login/divider_with_margins.dart';
-import 'package:themimictrial/views/login/facebook_button.dart';
 import 'package:themimictrial/views/login/google_button.dart';
 import 'package:themimictrial/views/login/login_view_signup_links.dart';
 
@@ -47,23 +46,23 @@ class LoginView extends ConsumerWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: AppColors.loginButtonColor,
-                      foregroundColor: AppColors.loginButtonTextColor,
-                    ),
-                    onPressed: () async {
-                      loadingScrean(context, str.Strings.loading);
-                      await ref
-                          .read(authStateProvider.notifier)
-                          .loginWithFacebook();
-                      Navigator.of(context).pop();
-                    },
-                    child: const FacebookButton(),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  // TextButton(
+                  //   style: TextButton.styleFrom(
+                  //     backgroundColor: AppColors.loginButtonColor,
+                  //     foregroundColor: AppColors.loginButtonTextColor,
+                  //   ),
+                  //   onPressed: () async {
+                  //     loadingScrean(context, str.Strings.loading);
+                  //     await ref
+                  //         .read(authStateProvider.notifier)
+                  //         .loginWithFacebook();
+                  //     Navigator.of(context).pop();
+                  //   },
+                  //   child: const FacebookButton(),
+                  // ),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
                   TextButton(
                     style: TextButton.styleFrom(
                       backgroundColor: AppColors.loginButtonColor,
