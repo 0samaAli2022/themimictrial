@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:themimictrial/state/auth/providers/is_logged_in_provider.dart';
-import 'package:themimictrial/views/login/login_view.dart';
+import 'package:themimictrial/views1/login/login_view.dart';
 import 'package:themimictrial/views/main/main_view.dart';
 import 'firebase_options.dart';
 

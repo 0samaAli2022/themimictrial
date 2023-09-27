@@ -10,15 +10,26 @@ class Authenticator {
   UserId? get userId => FirebaseAuth.instance.currentUser?.uid;
   bool get isAlreadyLoggedIn => userId != null;
   String get displayName =>
-      FirebaseAuth.instance.currentUser?.displayName ?? '';
+      FirebaseAuth.instance.currentUser?.displayName ?? 'User$userId';
   String? get email => FirebaseAuth.instance.currentUser?.email;
 
   Future<void> logOut() async {
-    await GoogleSignIn().disconnect();
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
     // facbook signout not implemented as they are not allowing it
     // await FacebookAuth.i.logOut();
+  }
+
+  Future<AuthResult> loginWithEmailAndPassword(
+      String email, String password) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    try {
+      await auth.signInWithEmailAndPassword(email: email, password: password);
+      return AuthResult.success;
+    } catch (e) {
+      print(e);
+      return AuthResult.failure;
+    }
   }
 
   Future<AuthResult> loginWithGoogleWeb() async {
